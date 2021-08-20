@@ -1,0 +1,62 @@
+.card-music{
+    margin:0 auto;
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-gap: 10px;
+    height: auto;
+    
+}
+.music-item{
+    width: 100%;
+    max-width: 400px;
+    padding: 1.2rem; 
+    background-color: white; 
+    height: auto; 
+    margin-top: 10px;
+    box-shadow: 6px 6px 7px rgba(0, 0, 0, 0.28);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 10px; 
+}
+
+.music-item img{
+    width: 100%;
+    display: flex;
+    object-fit: cover;
+    align-items: center;
+    border-radius: 4px;
+    align-self: center;  
+}
+
+.music-item .picture{
+    width: 100%;
+}
+.music-details{
+    width: 100%;
+
+}
+.music-details strong{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+h4{
+    font-weight: normal;
+}
+audio{
+    width: 100%;
+    height: 50px;
+    border-radius: 8px;
+    outline: none;
+    color: #fff;
+    margin-top: 5px;
+}
+
+.deezer-favourite{
+    display: flex;
+    justify-content: space-between;
+}

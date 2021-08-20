@@ -1,0 +1,21 @@
+.search-box{
+    width: 70vw;
+}
+input.search{
+    height: 40px;
+    border: 1px solid #DDD;
+    border-radius: 10px;
+    font-size: 16px;
+    padding: 0 20px;
+    width: 20rem;
+
+}
+
+.input-options{
+    margin-top: 10px;
+    border: none;
+}
+.input-options label{
+    margin-right: 8px;
+}
+
