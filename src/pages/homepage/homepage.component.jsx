@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import api from '../../services/api';
+import axios from 'axios';
 
 import SearchBox from '../../components/search-box/search-box.component';
 import CardMusic from '../../components/card-music/card-music.component';
@@ -14,25 +15,37 @@ class HomePage extends React.Component {
         super(props);
 
         this.state = {
-            text: ''
+            searchText: '',
+            searchBy:'', 
+            datas:[]
         }
     };
 
     async componentDidMount() {
 
-        console.log(this.props.tracks);
+        const response = await api.get("/chart/0/tracks");
+        console.log(response);
+        this.setState({datas: response.data.data});
     }
 
-    handleSubmit = (event) => {
+    handleSubmit = async  (event) => {
         event.preventDefault();
-        console.log(this.state.text);
+        console.log(this.state.searchText, this.state.searchBy);
+        const constrain = "album";
+        const query="eminem"
+
+        const res = await api.get(
+            `search/${constrain}?q=:${query}&order=RANKING&limit=10`
+          )
+          const { data } = res.data
+          console.log(data);
 
     }
     handleInputChange = (event) => {
-        this.setState({ text: event.target.value });
+        this.setState({ searchText: event.target.value });
     }
     handleRadioChange = (event) => {
-        console.log(event.target.value);
+        this.setState({searchBy: event.target.value})
     }
     render() {
         return (
@@ -46,7 +59,7 @@ class HomePage extends React.Component {
 
                 <CardMusic
                     handleOnclickButton={this.props.AddToFavorite}
-                    tracks={this.props.tracks}
+                    tracks={this.state.datas}
                     textButton="Add"
                 />
 
