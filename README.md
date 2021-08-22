@@ -1,7 +1,7 @@
 # PLAY HERE
 
 <div align="center">
-    <img src="./playhere.png" width="800px"</img>  
+    <img src="https://github.com/Futila/playhere/blob/master/playhere.PNG" width="800px" />  
     
 </div>
 
@@ -39,7 +39,7 @@ O app estará disponível no seu browser pelo endereço http://localhost:3000.
 
 Lembrando que será necessário acessar o link (https://cors-anywhere.herokuapp.com/corsdemo) para ter um acesso temporário a servidor demo, de modo que seja possível ter um acesso à API da Deezer. Conforme ilustrado na imagem abaixo, é só clicar no botão indicado no navegador.
 <div align="center">
-    <img src="./cors-anywhere.png" width="800px"</img> 
+    <img src="https://github.com/Futila/playhere/blob/master/cors-anywhere.PNG" width="800px"/> 
  
 </div>
 
