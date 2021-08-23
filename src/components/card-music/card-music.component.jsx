@@ -14,7 +14,7 @@ const CardMusic = ({ tracks, textButton, handleOnclickButton }) => {
         <div className="card-music">
             {
                 tracks.map(track => {
-                    const { id,
+                    const { 
                         album: {
                             cover_medium: coverImage,
                             title: albumTitle,
@@ -30,7 +30,8 @@ const CardMusic = ({ tracks, textButton, handleOnclickButton }) => {
                         <div key={track.id} className="music-item">
                             <img src={coverImage} alt="" />
                             <div className="music-details">
-                                <strong>{title}</strong>
+                                <strong>Album: {albumTitle}</strong>
+                                <strong>Track: {title}</strong>
                                 <h4>Singer: {artistName}</h4>
                                 <h4>Duração: {duration} min</h4>
 

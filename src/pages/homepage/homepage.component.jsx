@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import api from '../../services/api';
-import axios from 'axios';
+
 
 import SearchBox from '../../components/search-box/search-box.component';
 import CardMusic from '../../components/card-music/card-music.component';
@@ -16,8 +16,8 @@ class HomePage extends React.Component {
 
         this.state = {
             searchText: '',
-            searchBy:'', 
-            datas:[]
+            searchBy: '',
+            datas: []
         }
     };
 
@@ -25,27 +25,37 @@ class HomePage extends React.Component {
 
         const response = await api.get("/chart/0/tracks");
         console.log(response);
-        this.setState({datas: response.data.data});
+        this.setState({ datas: response.data.data });
     }
 
-    handleSubmit = async  (event) => {
+    handleSubmit = async (event) => {
         event.preventDefault();
-        console.log(this.state.searchText, this.state.searchBy);
-        const constrain = "album";
-        const query="eminem"
+        switch (this.state.searchBy) {
+            case 'album':
+                const responseAlbum = await api.get(`search/?q=album:${this.state.searchText}`);
+               this.setState({datas: responseAlbum.data.data});
+                break;
 
-        const res = await api.get(
-            `search/${constrain}?q=:${query}&order=RANKING&limit=10`
-          )
-          const { data } = res.data
-          console.log(data);
+            case 'artist':
+               const responseArtist = await api.get(`search/?q=artist:${this.state.searchText}`);
+               this.setState({datas: responseArtist.data.data});
+               break;
+
+            case 'music-title':
+                const responseTrack = await api.get(`search/?q=track:${this.state.searchText}`);
+               this.setState({datas: responseTrack.data.data});
+                break;
+
+            default:
+                break;
+        }
 
     }
     handleInputChange = (event) => {
         this.setState({ searchText: event.target.value });
     }
     handleRadioChange = (event) => {
-        this.setState({searchBy: event.target.value})
+        this.setState({ searchBy: event.target.value })
     }
     render() {
         return (
@@ -71,7 +81,7 @@ const mapStateToProps = state => ({
     tracks: state.tracks.track_list
 });
 
-const mapDispatchToProps = dispatch =>({
+const mapDispatchToProps = dispatch => ({
     AddToFavorite: item => dispatch(addItem(item))
 });
 

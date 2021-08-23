@@ -9,6 +9,8 @@
 
 PlayHere é projecto (desafio) para uma avaliação técnica, é uma webApp que faz a listagem da musicas do momento da Deezer. 
 
+## 💻 Preview
+![playhere](https://github.com/Futila/playhere/blob/master/playhere-preview)
 
 ## 🧪 Tecnologias
 
@@ -47,7 +49,8 @@ Lembrando que será necessário acessar o link (https://cors-anywhere.herokuapp.
 ## Dificuldades
 
 - #### Bloqueamento da Requisição pelo CORS
-  - Não estava sendo possível fazer as requisições à API da Deezer a partir do meu localhost, o que levou-me a procurar soluções para tal empasse. Dessa forma, fiz o uso do end-point (https://github.com/Rob--W/cors-anywhere/#documentation), que me deu acesso temporário à API da Deezer usando ((https://cors-anywhere.herokuapp.com/corsdemo). Para isso, toda vez que o acesso temporário expirasse era só activar novamente e o acesso retomava.
+  - Não estava sendo possível fazer as requisições à API da Deezer a partir do meu localhost, o que levou-me a procurar soluções para tal empasse. Dessa forma, fiz o uso do end-point (https://github.com/Rob--W/cors-anywhere/#documentation), que me deu acesso temporário à API da Deezer usando (https://cors-anywhere.herokuapp.com/corsdemo). Para isso, toda vez que o acesso temporário expirasse era só activar novamente e o acesso retomava. abaixo é ilustrado o procedimento
+  ![play]![playhere](https://github.com/Futila/playhere/blob/master/playhere.gif)
 
 ---
 
