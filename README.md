@@ -10,7 +10,7 @@
 PlayHere é projecto (desafio) para uma avaliação técnica, é uma webApp que faz a listagem da musicas do momento da Deezer. 
 
 ## 💻 Preview
-![playhere](https://github.com/Futila/playhere/blob/master/playhere-preview)
+![playhere](https://github.com/Futila/playhere/blob/master/playhere-preview.gif)
 
 ## 🧪 Tecnologias
 
